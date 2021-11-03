@@ -13,8 +13,6 @@ Game::Game() {
 	srand(time(NULL));
 
 	system("cls");
-	this->lv.updateSnakePos();
-	this->lv.display();
 
 	while (!this->lv.snake.isCrashed()) {
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0,0 });

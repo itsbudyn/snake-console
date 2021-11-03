@@ -30,57 +30,28 @@ void Level::updateSnakePos() {
 				break;
 			}
 		}
+
 		if (!this->snake.isCrashed()) {
 			Coord nextcoord(snakeHeadX,snakeHeadY);
 			switch (this->snake.getDir()) {
 			case 'n':
 				nextcoord.y--;
-				for (auto i : this->snake.getCoords()) {
-					if (i != this->snake.getHeadPos()) {
-						if (i == nextcoord) {
-							Sleep(this->snake.getFreq());
-							break;
-						}
-					}
-				}
 			case 's':
 				if (snakeHeadY == area_h - 1 || snakeHeadY == 0) Sleep(this->snake.getFreq());
-				else if (this->snake.getDir()=='s') {
-					nextcoord.y++;
-					for (auto i : this->snake.getCoords()) {
-						if (i != this->snake.getHeadPos()) {
-							if (i == nextcoord) {
-								Sleep(this->snake.getFreq());
-								break;
-							}
-						}
-					}
-				}
+				else if (this->snake.getDir()=='s') nextcoord.y++;
 				break;
 			case 'e':
 				nextcoord.x++;
-				for (auto i : this->snake.getCoords()) {
-					if (i != this->snake.getHeadPos()) {
-						if (i == nextcoord) {
-							Sleep(this->snake.getFreq());
-							break;
-						}
-					}
-				}
 			case 'w':
 				if (snakeHeadX == area_w - 1 || snakeHeadX == 0) Sleep(this->snake.getFreq());
-				else if (this->snake.getDir()=='w') {
-					nextcoord.x--;
-					for (auto i : this->snake.getCoords()) {
-						if (i != this->snake.getHeadPos()) {
-							if (i == nextcoord) {
-								Sleep(this->snake.getFreq());
-								break;
-							}
-						}
-					}
-				}
+				else if (this->snake.getDir()=='w') nextcoord.x--;
 				break;
+			}
+			for (auto i : this->snake.getCoords()) {
+				if (i == nextcoord) {
+					Sleep(this->snake.getFreq());
+					break;
+				}
 			}
 		}
 	}
@@ -107,7 +78,8 @@ void Level::display() const {
 		std::cout << char(0xCD);
 	}
 	std::cout << char(0xBC) << std::endl;
-	std::cout << this->snake.getHeadPos().x << '\t' << this->snake.getHeadPos().y << '\t' << this->snake.getLength() << std::endl;
+	//std::cout << this->snake.getHeadPos().x << '\t' << this->snake.getHeadPos().y << '\t' << this->snake.getLength() << std::endl;
+	std::cout << "Score: " << this->snake.getLength()-5 << std::endl;
 }
 
 void Level::newApple() {
@@ -116,7 +88,7 @@ void Level::newApple() {
 		this->apple_x = rand() % this->area_w;
 		this->apple_y = rand() % this->area_h;
 		for (auto i : this->snake.getCoords()) {
-			if (i.y == apple_x && i.y == apple_y) {
+			if (i.x == apple_x && i.y == apple_y) {
 				appleSet = false;
 				break;
 			}

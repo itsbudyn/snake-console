@@ -19,6 +19,7 @@ public:
 	bool isCrashed() const;
 	unsigned short getLength() const;
 	unsigned short getFreq() const;
+	void setFreq(const unsigned short freq);
 	char getDir() const;
 	Snake();
 };

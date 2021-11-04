@@ -72,6 +72,10 @@ unsigned short Snake::getFreq() const {
 	return this->freq;
 }
 
+void Snake::setFreq(const unsigned short freq){
+	this->freq=freq;
+}
+
 char Snake::getDir() const {
 	return this->dir;
 }

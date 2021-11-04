@@ -1,5 +1,11 @@
 #include "Game.h"
 
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define KEY_LEFT 75
+#define KEY_RIGHT 77
+#define KEY_ESC 113
+
 void Game::ShowConsoleCursor(const bool showFlag) {
 	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO cursorInfo;
@@ -23,7 +29,28 @@ Game::Game() {
 		else {
 			Sleep(this->lv.snake.getFreq());
 			if (_kbhit()) {
-				switch (_getch()) {
+
+				unsigned char c =_getch();
+				if (c==224 || c==27){
+					switch(_getch()){
+					case KEY_UP:
+						c='w';
+						break;
+					case KEY_LEFT:
+						c='a';
+						break;
+					case KEY_DOWN:
+						c='s';
+						break;
+					case KEY_RIGHT:
+						c='d';
+						break;
+					case KEY_ESC:
+						c='q';
+						break;
+					}
+				}
+				switch (c) {
 				case 'w':
 					this->lv.snake.changeDir('n');
 					break;

@@ -112,6 +112,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -156,7 +157,14 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Snake.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="snake.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

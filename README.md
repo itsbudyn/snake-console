@@ -8,7 +8,8 @@ controls:
 features:
 - extra turn cycle (when close to a wall or your own body)
 
-roadmap:
+features to implement:
+- (potentially) better snake skin
 - config file
 - stats
 - main menu

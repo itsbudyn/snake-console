@@ -13,3 +13,5 @@
 
 #define AREA_W 30
 #define AREA_H 15
+
+#define GAME_VER "1.2.0"

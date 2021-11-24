@@ -79,7 +79,11 @@ void Level::display() const {
 	}
 	std::cout << char(0xBC) << std::endl;
 	//std::cout << this->snake.getHeadPos().x << '\t' << this->snake.getHeadPos().y << '\t' << this->snake.getLength() << std::endl;
-	std::cout << "Score: " << this->snake.getLength()-5 << std::endl;
+	std::cout << std::endl << "Score: " << this->snake.getLength()-5 << std::endl << std::endl;
+	std::cout << "CONTROLS" << std::endl;
+	std::cout << "Move: WASD / Arrow Keys" << std::endl;
+	std::cout << "Exit: Q / ESC" << std::endl << std::endl;
+	std::cout << GAME_VER << std::endl << std::endl;
 }
 
 void Level::newApple() {

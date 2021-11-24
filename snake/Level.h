@@ -2,9 +2,6 @@
 #include "Header.h"
 #include "Snake.h"
 
-#define AREA_W 30
-#define AREA_H 15
-
 class Level {
 private:
 	const unsigned short area_w = AREA_W;

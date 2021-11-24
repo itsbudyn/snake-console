@@ -81,5 +81,5 @@ char Snake::getDir() const {
 }
 
 Snake::Snake() {
-	this->coords.push_back(Coord(7,4));
+	this->coords.push_back(Coord(AREA_W / 2, AREA_H / 2));
 }

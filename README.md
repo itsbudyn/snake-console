@@ -1,6 +1,6 @@
 # snake-console
 A game of snake that runs in a terminal.
-Project made to refresh knowledge of C++.
+Project made to refresh knowledge of C++ and to experiment with GitHub features, such as Releases.
 
 Controls:
 - WASD or arrow keys to change directions

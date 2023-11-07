@@ -1,5 +1,6 @@
 # snake-console
-A game of snake that runs in a terminal
+A game of snake that runs in a terminal.
+Project made to refresh knowledge of C++.
 
 Controls:
 - WASD or arrow keys to change directions
